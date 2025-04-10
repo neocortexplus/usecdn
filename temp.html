@@ -14,59 +14,111 @@
     <div id="root"></div>
 
     <script type="text/babel">
+        // A component that will unmount
+        const Counter = ({ count, onIncrement, onDecrement }) => {
+            console.log('Counter component rendered');
+            
+            React.useEffect(() => {
+                console.log('Counter Effect: Initial mount or count changed. Count =', count);
+                document.title = `Count: ${count}`;
+                
+                return () => {
+                    console.log('Counter Effect CLEANUP: Count changed or unmounting. Previous count was', count);
+                    // Only runs when count changes or component unmounts
+                };
+            }, [count]);
+            
+            React.useEffect(() => {
+                console.log('Counter Effect: Component mounted (empty dependency array)');
+                
+                return () => {
+                    console.log('Counter Effect CLEANUP: Component unmounting (empty dependency array)');
+                    // This only runs when component unmounts
+                };
+            }, []);
+            
+            return (
+                <div>
+                    <p>Count: {count}</p>
+                    <button onClick={onIncrement}>Increment</button>
+                    <button onClick={onDecrement}>Decrement</button>
+                </div>
+            );
+        };
+        
         // Main component with useState, useEffect, and event handlers
         const App = () => {
+            console.log('App component rendered');
+            
             // State hooks
             const [count, setCount] = React.useState(0);
             const [message, setMessage] = React.useState("Hello World");
+            const [showCounter, setShowCounter] = React.useState(true);
             
             // Event handlers
             const handleIncrement = () => {
+                console.log('Increment clicked');
                 setCount(prevCount => prevCount + 1);
             };
             
             const handleDecrement = () => {
+                console.log('Decrement clicked');
                 setCount(prevCount => prevCount > 0 ? prevCount - 1 : 0);
             };
             
             const handleReset = () => {
+                console.log('Reset clicked');
                 setCount(0);
                 setMessage("Hello World");
             };
             
             const handleChangeMessage = () => {
+                console.log('Update Message clicked');
                 setMessage(`Hello World (Clicked ${count} times)`);
             };
             
-            // useEffect hook
+            const toggleCounter = () => {
+                console.log('Toggle Counter clicked, will set showCounter to:', !showCounter);
+                setShowCounter(!showCounter);
+            };
+            
+            // useEffect hook with console logs
             React.useEffect(() => {
-                // This effect runs after every render
-                document.title = `Count: ${count}`;
+                console.log('App Effect: Count changed to', count);
                 
-                // Cleanup function (runs before the component unmounts)
                 return () => {
-                    document.title = "React App";
+                    console.log('App Effect CLEANUP: Count changing from', count);
                 };
-            }, [count]); // Only re-run if count changes
+            }, [count]);
             
             React.useEffect(() => {
-                // This effect runs only once on mount
-                console.log("Component mounted");
+                console.log('App Effect: Component mounted (runs once)');
                 
                 // Cleanup function
                 return () => {
-                    console.log("Component will unmount");
+                    console.log('App Effect CLEANUP: Component unmounting');
                 };
             }, []);
             
             return (
                 <div>
                     <h1>{message}</h1>
-                    <p>Count: {count}</p>
+                    
+                    <button onClick={toggleCounter}>
+                        {showCounter ? "Unmount Counter" : "Mount Counter"}
+                    </button>
+                    
+                    {showCounter ? (
+                        <Counter 
+                            count={count} 
+                            onIncrement={handleIncrement} 
+                            onDecrement={handleDecrement} 
+                        />
+                    ) : (
+                        <p>Counter is unmounted! Check console for cleanup logs.</p>
+                    )}
                     
                     <div>
-                        <button onClick={handleIncrement}>Increment</button>
-                        <button onClick={handleDecrement}>Decrement</button>
                         <button onClick={handleChangeMessage}>Update Message</button>
                         <button onClick={handleReset}>Reset</button>
                     </div>
@@ -77,6 +129,9 @@
         // Render the app
         const root = ReactDOM.createRoot(document.getElementById('root'));
         root.render(<App />);
+        
+        console.log('Initial rendering complete. Open your browser console to see the logs!');
+        console.log('Click "Unmount Counter" to see unmount cleanup in action.');
     </script>
 </body>
 </html>

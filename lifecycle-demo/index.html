@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple React Lifecycle Demo</title>
+    <!-- Load React and ReactDOM from CDN -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <!-- Load Babel for JSX support -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .app-container {
+            padding: 20px;
+        }
+        .controls {
+            margin: 20px 0;
+        }
+        .controls button {
+            margin-right: 10px;
+            padding: 8px 16px;
+        }
+        .component-box {
+            border: 2px solid;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+        .main-page { border-color: #e74c3c; }
+        .display-board { border-color: #2ecc71; }
+        .info-panel { border-color: #f39c12; }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <!-- Load component scripts in correct order -->
+    <!-- Components must be loaded before App.js since App uses them -->
+    <script type="text/babel" src="components/MainPage.js"></script>
+    <script type="text/babel" src="components/DisplayBoard.js"></script>
+    <script type="text/babel" src="components/InfoPanel.js"></script>
+    <script type="text/babel" src="App.js"></script>
+    
+    <!-- Main script to render the App -->
+    <script type="text/babel">
+        // Render the App component
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>
