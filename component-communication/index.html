@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Component Communication Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .parent-container {
+            border: 2px solid #3498db;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: #eaf2f8;
+        }
+        .child-container {
+            border: 2px solid #e74c3c;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px 0;
+            background-color: #fadbd8;
+        }
+        .second-child {
+            border-color: #2ecc71;
+            background-color: #eafaf1;
+        }
+        input, button {
+            padding: 8px;
+            margin: 5px 0;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+    <!-- React CDN Links -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+
+    <!-- Load our components -->
+    <script type="text/babel" src="components/Child1.js"></script>
+    <script type="text/babel" src="components/Child2.js"></script>
+    <script type="text/babel" src="components/Parent.js"></script>
+    <script type="text/babel" src="App.js"></script>
+</body>
+</html>
