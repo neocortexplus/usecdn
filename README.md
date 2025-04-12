@@ -221,7 +221,7 @@ docker-compose up -d
   <img width="60" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/chrome/chrome-original.svg" alt="Chrome" />
   <img width="60" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firefox/firefox-original.svg" alt="Firefox" />
   <img width="60" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/safari/safari-original.svg" alt="Safari" />
-  <img width="60" src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/microsoftedge.svg" alt="Edge" />
+  <img width="60" src="https://www.svgrepo.com/download/354067/microsoft-edge.svg" alt="Edge" />
 </div>
 
 These examples work best in modern browsers that support ES6 features.
