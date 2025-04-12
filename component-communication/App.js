@@ -21,5 +21,8 @@ const App = () => {
     );
 };
 
-// Render the App component into the root div
+// Render the App component into the root div /react 18
 ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+
+// react 17
+// ReactDOM.render(<App />, document.getElementById('root'));

@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  react-cdn-examples:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: react-cdn-examples
+    ports:
+      - "8081:80" 
+    restart: unless-stopped
