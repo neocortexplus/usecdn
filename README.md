@@ -91,7 +91,7 @@ docker-compose down
 ## 🐋 Running with Docker Only (Without Docker Compose)
 
 <div align="center">
-  <img width="500" src="https://raw.githubusercontent.com/docker/docker.github.io/master/images/docker-containerized-appliction-blue.png" alt="Docker Container" />
+  <img width="500" src="https://www.docker.com/wp-content/uploads/2022/03/horizontal-logo-monochromatic-white.png" alt="Docker Container" />
 </div>
 
 ### 🏗️ Building the Docker Image
