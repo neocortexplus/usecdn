@@ -218,10 +218,10 @@ docker-compose up -d
 ## 🌐 Browser Support
 
 <div align="center">
-  <img width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/chrome/chrome-original.svg" alt="Chrome" />
-  <img width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firefox/firefox-original.svg" alt="Firefox" />
-  <img width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/safari/safari-original.svg" alt="Safari" />
-  <img width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/edge/edge-original.svg" alt="Edge" />
+  <img width="60" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/chrome/chrome-original.svg" alt="Chrome" />
+  <img width="60" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firefox/firefox-original.svg" alt="Firefox" />
+  <img width="60" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/safari/safari-original.svg" alt="Safari" />
+  <img width="60" src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/microsoftedge.svg" alt="Edge" />
 </div>
 
 These examples work best in modern browsers that support ES6 features.
